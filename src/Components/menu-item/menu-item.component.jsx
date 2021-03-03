@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import "./menuItem.styles.scss";
+import "./menu-item.styles.scss";
 const MenuItem = ({ title, imageUrl, size ,linkUrl ,history, match }) => {
 	console.log(match)
 	return (
