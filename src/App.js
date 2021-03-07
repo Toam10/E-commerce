@@ -5,7 +5,10 @@ import { Route, Switch } from "react-router-dom";
 import ShopPage from "./pages/Shop/shop-page.component";
 import Header from "./Components/header/header.component";
 import SignInAndSignUp from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
-import { auth } from "./Components/firebase/firebase.utlis";
+import {
+	auth,
+	enterCustomerIntoThePlatformThroughGoogle,
+} from "./Components/firebase/firebase.utlis";
 class App extends React.Component {
 	constructor() {
 		super();
@@ -17,7 +20,8 @@ class App extends React.Component {
 	unsubscribeFromAuth = null;
 
 	componentDidMount() {
-		this.unsubscribeFromAuth = auth.onAuthStateChanged((user) => {
+		this.unsubscribeFromAuth = auth.onAuthStateChanged(async (user) => {
+			enterCustomerIntoThePlatformThroughGoogle(user);
 			this.setState({ currentUser: user });
 		});
 	}

@@ -29,7 +29,7 @@ class SignIn extends React.Component {
 			<div className='sign-in'>
 				<h2>I all ready have an acount</h2>
 				<span>Sign in with your email and password</span>
-				<from>
+				<form>
 					<FormInput
 						name='email'
 						type='email'
@@ -52,7 +52,7 @@ class SignIn extends React.Component {
 							Sign in with google
 						</CustomButton>
 					</div>
-				</from>
+				</form>
 			</div>
 		);
 	}

@@ -13,13 +13,37 @@ const confing = {
 };
 
 firebase.initializeApp(confing);
-
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
+
+const createUserProfileDocument = async (userAuth, userRef, additionalData) => {
+	const { displayName, email } = userAuth;
+	const createdAt = new Date();
+	try {
+		await userRef.set({
+			displayName,
+			email,
+			createdAt,
+			...additionalData,
+		});
+	} catch (error) {
+		return error;
+	}
+};
+
+export const enterCustomerIntoThePlatformThroughGoogle = async (userAuth, additionalData) => {
+	if (!userAuth) return;
+	const userRef = firestore.doc(`users/${userAuth.uid}`);
+
+	const snapShot = await userRef.get();
+	console.log(snapShot);
+	if (!userRef.exists) {
+		createUserProfileDocument(userAuth, userRef, additionalData);
+	}
+};
 
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;
-
