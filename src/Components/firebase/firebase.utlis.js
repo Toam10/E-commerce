@@ -34,12 +34,10 @@ const createUserProfileDocument = async (userAuth, userRef, additionalData) => {
 export const enterCustomerIntoThePlatformThroughGoogle = async (userAuth, additionalData) => {
 	if (!userAuth) return;
 	const userRef = firestore.doc(`users/${userAuth.uid}`);
-
-	const snapShot = await userRef.get();
-	console.log(snapShot);
 	if (!userRef.exists) {
 		createUserProfileDocument(userAuth, userRef, additionalData);
 	}
+	return userRef
 };
 
 const provider = new firebase.auth.GoogleAuthProvider();
