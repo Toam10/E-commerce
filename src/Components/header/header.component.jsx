@@ -3,6 +3,7 @@ import "./header.styles.scss";
 import { Link } from "react-router-dom";
 import { auth } from "../../Components/firebase/firebase.utlis";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
+import { connect } from "react-redux";
 
 const UserSignInToggel = (currentUser) => {
 	if (currentUser) {
@@ -40,4 +41,8 @@ const Header = ({ currentUser }) => {
 	);
 };
 
-export default Header;
+const mapStateToProps = (state) => ({
+	...state.user,
+});
+
+export default connect(mapStateToProps)(Header);
