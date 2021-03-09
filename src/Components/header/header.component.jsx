@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { auth } from "../../Components/firebase/firebase.utlis";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import { connect } from "react-redux";
+import CartIcon from "../cart-icon/cart-icon.component";
 
 const UserSignInToggel = (currentUser) => {
 	if (currentUser) {
@@ -36,6 +37,7 @@ const Header = ({ currentUser }) => {
 					CONTACT
 				</Link>
 				{UserSignInToggel(currentUser)}
+			<CartIcon />
 			</div>
 		</div>
 	);
