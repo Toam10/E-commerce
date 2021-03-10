@@ -46,7 +46,7 @@ const Header = ({ currentUser, hidden }) => {
 
 const mapStateToProps = (state) => ({
 	...state.user,
-	...state.cartdropdown,
+	hidden: state.cart.hidden,
 });
 
 export default connect(mapStateToProps)(Header);
