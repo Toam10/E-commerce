@@ -10,7 +10,7 @@ const UserSignInToggel = (currentUser) => {
 	if (currentUser) {
 		return (
 			<div className='option' onClick={() => auth.signOut()}>
-				SIGN OUT
+				SIGN OUTO
 			</div>
 		);
 	} else {
