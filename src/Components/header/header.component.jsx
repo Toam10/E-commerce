@@ -1,14 +1,19 @@
 import React from "react";
-import "./header.styles.scss";
 import { Link } from "react-router-dom";
 import { auth } from "../../Components/firebase/firebase.utlis";
-import { ReactComponent as Logo } from "../../assets/crown.svg";
+
 import { connect } from "react-redux";
-import CartIcon from "../cart-icon/cart-icon.component";
-import CartDropdown from "../cart-dropdown/cart-dropdown.component";
+
+import { ReactComponent as Logo } from "../../assets/crown.svg";
+import CartIcon from "../cart-components/cart-icon/cart-icon.component";
+import CartDropdown from "../cart-components/cart-dropdown/cart-dropdown.component";
+
 import { selectCartHidden } from "../redux/cart/cart.selectors";
 import { selectCurrentUser } from "../redux/user/user.selectors";
 import { createStructuredSelector } from "reselect";
+
+import "./header.styles.scss";
+
 const UserSignInToggel = (currentUser) => {
 	if (currentUser) {
 		return (

@@ -11,3 +11,22 @@
 	display: flex;
 	justify-content: space-between;
 }
+
+
+.warning-box{
+	background-color: rgb(182, 40, 40);
+	opacity: 0.8;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1em;
+	width: 70%;
+	height: 70px;
+}
+
+.warning-box-container{
+	display: flex;
+	justify-content: center;
+	height: 70px;
+	margin: 10px 0;
+}

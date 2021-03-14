@@ -37,6 +37,7 @@ export const enterCustomerIntoThePlatformThroughGoogle = async (userAuth, additi
 	if (!userRef.exists) {
 		createUserProfileDocument(userAuth, userRef, additionalData);
 	}
+	
 	return userRef
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
-import FormInput from "../form-input/form-input.component";
-import CustomButton from "../custom-button/custom-button.component";
+import FormInput from '../elements-components/form-input/form-input.component'
+import CustomButton from "../elements-components/custom-button/custom-button.component";
 
 import { auth, enterCustomerIntoThePlatformThroughGoogle } from "../firebase/firebase.utlis";
 
@@ -25,7 +25,6 @@ class SignUp extends React.Component {
 			{
 				[name]: value,
 			},
-			console.log(this.state[name])
 		);
 	}
 
