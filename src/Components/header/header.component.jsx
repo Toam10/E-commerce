@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { auth } from "../../Components/firebase/firebase.utlis";
 
 import { connect } from "react-redux";
@@ -23,9 +23,12 @@ const UserSignInToggel = (currentUser) => {
 		);
 	} else {
 		return (
-			<Link className='option' to='/signin'>
-				SIGN IN
-			</Link>
+			<div>
+				<Redirect to='/signin' />
+				<Link className='option' to='/signin'>
+					SIGN IN
+				</Link>
+			</div>
 		);
 	}
 };

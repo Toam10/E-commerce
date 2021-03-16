@@ -5,29 +5,48 @@
 	flex-direction: column;
 	align-items: center;
 	margin: 50px auto 0;
-  
+
+	.warning-payments {
+		height: 15vh;
+		background-color: rgb(214, 115, 115);
+		font-size: 1.4em;
+		display: flex;
+		align-items: center;
+		justify-items: center;
+		text-align: center;
+		margin: 10px 0;
+		line-height: 2em;
+		font-weight: lighter;
+		font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+		padding: 1.2em;
+		user-select: none;
+	}
+
 	.checkout-header {
-	  width: 100%;
-	  padding: 10px 0;
-	  display: flex;
-	  justify-content: space-between;
-	  border-bottom: 1px solid darkgrey;
-  
-	  .header-block {
-		text-transform: capitalize;
-		width: 23%;
-  
-		&:last-child {
-		  width: 8%;
+		width: 100%;
+		padding: 10px 0;
+		display: flex;
+		justify-content: space-between;
+		border-bottom: 1px solid darkgrey;
+
+		.header-block {
+			text-transform: capitalize;
+			width: 23%;
+
+			&:last-child {
+				width: 8%;
+			}
 		}
-	  }
 	}
-  
+
 	.total {
-	  margin-top: 30px;
-	  margin-left: auto;
-	  font-size: 36px;
-	  font-weight: 100;
+		margin-top: 30px;
+		margin-left: auto;
+		font-size: 36px;
+		font-weight: 100;
 	}
-  }
-  
+}
+.StripeCheckout {
+	margin-left: auto;
+	margin-top: 10px;
+}
