@@ -5,11 +5,10 @@ import CollectionsOverView from "../../Components/collection-components/collecti
 import CollectionPage from "../collection/collection.component";
 
 const ShopPage = ({ match }) => {
-	console.log(match);	
 	return (
 		<div className='shop-page'>
 			<Route exact path={`${match.path}`} component={CollectionsOverView} />
-			<Route  path={`${match.path}/:collectionId`} component={CollectionPage} />
+			<Route path={`${match.path}/:collectionId`} component={CollectionPage} />
 		</div>
 	);
 };
