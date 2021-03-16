@@ -36,17 +36,21 @@ const UserSignInToggel = (currentUser) => {
 const Header = ({ currentUser, hidden }) => {
 	return (
 		<div className='header'>
-			<Link to='/' className='logo-container'>
+			<Link cu to={`${currentUser ? "/" : "signin"}`} className='logo-container'>
 				<Logo className='logo' />
 			</Link>
 			<div className='options'>
-				<Link className='option' to='/shop'>
-					SHOP
-				</Link>
+				{currentUser && (
+					<Link className='option' to='/shop'>
+						SHOP
+					</Link>
+				)}
 
-				<Link className='option' to='/shop'>
-					CONTACT
-				</Link>
+				{currentUser && (
+					<Link className='option' to='/contact'>
+						CONTACT
+					</Link>
+				)}
 				{UserSignInToggel(currentUser)}
 				<CartIcon />
 			</div>

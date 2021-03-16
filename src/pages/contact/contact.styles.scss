@@ -1,0 +1,32 @@
+.contact-page {
+	height: 110%;
+	.border {
+		border: 4px solid gray;
+		padding: 10px;
+		width: 50%;
+		height: 60%;
+		margin: auto 23%;
+		padding-bottom: 0px;
+
+		.p1-warper {
+			display: flex;
+			justify-content: center;
+			height: 30vh;
+
+			.p1{
+				max-width: 80%;
+				text-align: center;
+				
+			}
+		}
+
+		.contact-email-warper {
+			height: 10vh;
+			display: flex;
+			justify-content: start;
+			padding: 1.4em;
+			margin-bottom: 5px;
+			align-items: center;
+		}
+	}
+}
